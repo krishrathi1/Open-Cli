@@ -1,0 +1,20 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies if any are needed
+RUN apt-get update && apt-get install -get -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Expose the port (Render uses 10000 by default or defaults to PORT env)
+EXPOSE 10000
+
+# Run FastAPI with uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "10000"]

@@ -1,0 +1,22 @@
+{
+  "name": "rathi-cli",
+  "version": "1.0.0",
+  "description": "Distributed Agentic Coding Assistant",
+  "main": "index.js",
+  "bin": {
+    "rathi": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "chalk": "^5.3.0",
+    "boxen": "^7.1.1",
+    "marked": "^9.1.5",
+    "marked-terminal": "^6.0.0",
+    "ora": "^7.0.1"
+  }
+}
